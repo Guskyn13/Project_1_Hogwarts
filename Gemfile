@@ -14,3 +14,6 @@ gem "require_all", "~> 3.0"
 gem "tty-prompt", "~> 0.23.0"
 gem "tty-progressbar"
 gem "tty-color"
+gem "tty-box"
+gem "tty-font"
+gem 'lolcat', '~> 42.24'
