@@ -3,7 +3,7 @@ class Cli
    def prompt
       TTY::Prompt.new
    end
-
+   
    def clear
       system('clear')
    end
@@ -24,21 +24,26 @@ class Cli
 
    end
 
-    def greeting
-      puts "Welcome to Hogwarts School of Witchcraft and Wizardry!"
-    end
+   def play_music
+      pid = fork{ exec 'afplay', "Harry_Potter_Theme_Song_Hedwigs_Theme (mp3cut.net) (2).mp3" }
+   end
+   
+   def greeting
+      font = TTY::Font.new(:doom)
+      puts font.write("Welcome  to  Hogwarts")
+   end
 
-    def new_student
+   def new_student
       ask = prompt.yes?("Are you a new student?")
       if ask
          get_username()
       else
          puts "Welcome back to Hogwarts, now go join your class and learn something new."
       end
-    end
+   end
 
    def get_username
-      puts "What is your wizard and last name?"
+      puts "What is your given wizard name?"
       @username = gets.chomp
       clear()
    end
@@ -119,3 +124,4 @@ class Cli
    end
 
 end
+

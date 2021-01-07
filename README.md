@@ -7,12 +7,15 @@ During our Module 1 at Flatirons School, we were asking to build a CLI APP. We c
 With this app, we promise that you will get a fair sorting of the class that will better suit you and here is how.
 
 OUR FIRST STEPS
-- We began by creating our basic layout of files, installation of gems, and setting up our environment. For example, our environment looked like this: 
+- We began by creating our basic layout of files, installation of gems, and setting up our environment. 
+- From there we began working in vertical slices to complete our code.
 
-    require 'bundler/setup'
-    Bundler.require
-    require_all 'lib'
+OUR LAST STEPS
+- For our last stops we work with tty-propts to pretty up our app
+- We also worked with afplay to add some fun audio to the app. Our code looked like this : 
 
-- blah blah
-- blah blah
-- blah blah
+def play_music
+      pid = fork{ exec 'afplay', "Harry_Potter_Theme_Song_Hedwigs_Theme (mp3cut.net).mp3" }
+   end
+
+
