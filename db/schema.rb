@@ -10,12 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_222517) do
+ActiveRecord::Schema.define(version: 2021_01_07_114118) do
+
+  create_table "hogwarts", force: :cascade do |t|
+    t.integer "wizard_id"
+    t.integer "school_id"
+    t.index ["school_id"], name: "index_hogwarts_on_school_id"
+    t.index ["wizard_id"], name: "index_hogwarts_on_wizard_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "wizards", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "DOB"
+    t.string "pet"
+    t.string "school"
+    t.integer "school_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["school_id"], name: "index_wizards_on_school_id"
   end
 
 end
