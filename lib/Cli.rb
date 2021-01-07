@@ -3,6 +3,14 @@ class Cli
    def prompt
       TTY::Prompt.new
    end
+# 🧹
+   def loading_bar
+      bar = TTY::ProgressBar.new("Sorting [:bar]", total: 30)
+      30.times do
+      sleep(0.1)
+      bar.advance(1)
+      end
+   end
 
    def clear
       system('clear')
@@ -33,8 +41,14 @@ class Cli
       if ask
          get_username()
       else
-         puts "Welcome back to Hogwarts, now go join your class and learn something new."
+         puts "Welcome back to Hogwarts"
+         puts "Do you still have the same pet?"
+         changed_pet()
       end
+    end
+
+    def changed_pet
+      logging_out()
     end
 
    def get_username
@@ -60,7 +74,7 @@ class Cli
    end
 
    def question_1
-      answer = prompt.select("Would you steal candy from a baby?", ["Yes", "No"])
+      answer = prompt.select("Would you steal candy from a baby?", ["Yes", "No"], marker: '>', active_color: :cyan)
       if answer == "Yes"
          question_3()
       else
@@ -69,7 +83,7 @@ class Cli
    end
 
    def question_2
-      answer = prompt.select("What would you do if you saw a 10' mountain troll?", ["Save Yourself", "Protect Others"])
+      answer = prompt.select("What would you do if you saw a 10' mountain troll?", ["Save Yourself", "Protect Others"], active_color: :cyan)
       if answer == "Save Yourself"
          welcome_to_Hufflepuff()
       else
@@ -78,7 +92,7 @@ class Cli
    end
 
    def question_3
-      answer = prompt.select("What is the closest material of the core of your wand?", ["Dragon's Blood", "Pheonix Feathers"])
+      answer = prompt.select("What is the closest material of the core of your wand?", ["Dragon's Blood", "Pheonix Feathers"], active_color: :cyan)
       if answer == "Dragon's Blood"
          welcome_to_Slyhterin()
       else
@@ -87,10 +101,12 @@ class Cli
    end
 
    def question_4
-      prompt.select("If you could bring a pet to Hogwarts, which would you bring?", ["Unicorn", "Nothing, I can't be trusted", "Spider"])
+      prompt.select("If you could bring a pet to Hogwarts, which would you bring?", ["Unicorn", "Nothing, I can't be trusted", "Spider"], active_color: :cyan)
    end
 
    def welcome_to_Slyhterin
+      clear()
+      loading_bar()
       clear()
       puts "Welcome to Slytherin!"
       logging_out()
@@ -117,5 +133,8 @@ class Cli
    def logging_out
       exit
    end
+
+   
+   
 
 end
