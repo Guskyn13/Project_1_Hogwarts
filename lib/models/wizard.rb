@@ -6,6 +6,10 @@ class Wizard < ActiveRecord::Base
       all.pluck(:name)
    end
 
+   def self.pets
+      all.pluck(:pet)
+   end
+
 # Array of all wizards by school
   def self.slytherin
       sly = self.where(school: 'Slytherin').pluck(:name)
@@ -38,9 +42,14 @@ class Wizard < ActiveRecord::Base
       clear
    end
 
-   def self.update_wizard(name, age)
+   def self.update_pet(pet)
+      old_pet = Wizard.all.find_by(pet: pet)
+      puts "What is your new pet?"
+      user_input = gets.chomp
+      old_pet.update(pet: user_input)
+      user_input
    end
-
+# binding.pry
 
 
 

@@ -10,12 +10,12 @@ def clear
    system('clear')
 end
 
-def lolcat
-   system "echo Basic Lolcat | lolcat"
-   system "figlet Lolcat and Figlet | lolcat -a -d 1"
-   system " echo Lolcat can even animate the colors in displays! | lolcat -a -d 500"
-   print lolcat
-end
+# def lolcat
+#    system "echo Basic Lolcat | lolcat"
+#    system "figlet Lolcat and Figlet | lolcat -a -d 1"
+#    system " echo Lolcat can even animate the colors in displays! | lolcat -a -d 500"
+#    print lolcat
+# end
 
 def new_student
    clear
@@ -23,15 +23,24 @@ def new_student
    ask = prompt.yes?("Are you a new student?")
    if ask
       clear
-
-# Im only working on if the wizard said yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-   # else
-   #    puts "Welcome back to Hogwarts"
-   #    puts "Do you still have the same pet?"
-   #    changed_pet()
-   end
+   else
+      puts "Welcome back to Hogwarts"
+      puts "What is your name,old friend?"
+      @username = gets.chomp
+         sleep(0.25)
+      clear
+      ask = prompt.yes?("Would you like to see info about your class, or change something?")
+      if ask
+      main_menu_slytherin
+      elsif
+         clear
+         exit_banner
+      
 end
+end
+end
+
+
 
 def sorting_hat_welcome
    banner_sorting_hat
@@ -65,14 +74,35 @@ loop do
    if back
       main_menu_slytherin 
    end
-            
-   when  "Find all Wizards in your    House"
-      clear
-      slytherin_banner
-      puts "\n"
-      Wizard.slytherin
-      puts "\n"
-      back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+
+#    when  "Find all Wizards in your House"
+#       clear
+#       slytherin_banner
+#       puts "\n"
+#       Wizards.slytherin
+#       puts "\n"
+#       back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+#    if back
+#       main_menu_slytherin
+#    end
+# end
+   # binding.pry
+
+when "Change Pet"
+   clear
+   slytherin_banner
+   user_pets = Wizard.pets
+   user_pet_selection = prompt.select("Whats your new name?", user_pets)
+   clear
+   new_pet = Wizard.update_pet(user_pet_selection)
+   clear
+   slytherin_banner
+   puts "Your name has been updated to #{new_pet}!!!"
+   user_pet_selection = new_pet
+   sleep(1.5)
+   clear
+   slytherin_banner
+   back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
    if back
       main_menu_slytherin
    end
@@ -81,13 +111,13 @@ loop do
       clear
       exit_banner
    end
+   
 end
+end
+
 
    
 
-end
-
-   
 # when 
    
 # else

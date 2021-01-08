@@ -1,6 +1,6 @@
 def banner
    box = TTY::Box.frame(width: 120, height: 15, border: :thick, align: :center, padding: 2) do
-      font.write("Hogwarts!").lolcat
+      font.write("Hogwarts!")#.lolcat
    end
    print box
    puts "\n"
