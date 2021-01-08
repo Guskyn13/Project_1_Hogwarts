@@ -35,7 +35,7 @@ class Wizard < ActiveRecord::Base
       puts "\n"
    end
    
-# Create mew wizards
+# Create new wizards
    def self.create_new
       banner
       puts "What is your given wizard and last name?"
@@ -52,7 +52,6 @@ class Wizard < ActiveRecord::Base
       @pet = gets.chomp
          sleep(0.25)
       clear
-      Wizard.create(name: @username, age: @age, pet: @pet)
       banner
       puts "Welcome to Hogwarts, #{@username}!"
          sleep(2)
@@ -67,7 +66,7 @@ class Wizard < ActiveRecord::Base
       old_pet.update(pet: user_input)
       user_input
    end
-# binding.pry
+end 
 
 
 
@@ -76,5 +75,3 @@ class Wizard < ActiveRecord::Base
 
 
 
-
-end
