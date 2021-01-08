@@ -86,13 +86,13 @@ loop do
 #       main_menu_slytherin
 #    end
 # end
-   # binding.pry
+#    binding.pry
 
 when "Change Pet"
    clear
    slytherin_banner
    user_pets = Wizard.pets
-   user_pet_selection = prompt.select("Whats your new name?", user_pets)
+   user_pet_selection = prompt.select("Lets update?", user_pets)
    clear
    new_pet = Wizard.update_pet(user_pet_selection)
    clear
