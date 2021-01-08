@@ -44,6 +44,7 @@ class Wizard < ActiveRecord::Base
 
    def self.update_pet(pet)
       old_pet = Wizard.all.find_by(pet: pet)
+      clear
       puts "What is your new pet?"
       user_input = gets.chomp
       old_pet.update(pet: user_input)
