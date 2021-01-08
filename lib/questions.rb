@@ -38,7 +38,7 @@ end
 
 def question_5
    banner_sorting_hat
-   answer = prompt.select("What is the closest material of the core of your wand?", ["Dragon's Blood", "Pheonix Feathers"], symbols: {marker: '>'}, active_color: :cyan)
+   answer = prompt.select("What is the closest material of the core of your wand?", ["Pheonix Feathers","Dragon's Blood"], symbols: {marker: '>'}, active_color: :cyan)
    if answer == "Dragon's Blood"
       clear
       slytherin_banner
