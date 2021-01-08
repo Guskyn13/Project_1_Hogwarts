@@ -92,12 +92,14 @@ when "Change Pet"
    clear
    slytherin_banner
    user_pets = Wizard.pets
+   puts user_pets
+   clear
    user_pet_selection = prompt.select("Lets update?", user_pets)
    clear
    new_pet = Wizard.update_pet(user_pet_selection)
    clear
    slytherin_banner
-   puts "Your name has been updated to #{new_pet}!!!"
+   puts "Your pet has been updated to #{new_pet}!!!"
    user_pet_selection = new_pet
    sleep(1.5)
    clear
