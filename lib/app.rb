@@ -167,6 +167,24 @@ def main_menu_ravenclaw
       ravenclaw_banner
       Wizard.ravenclaw
       back_menu
+      elsif
+      menu_selection == "Change Pet"
+      clear
+      slytherin_banner
+      user_pets = Wizard.pets
+      puts user_pets
+      clear
+      user_pet_selection = prompt.select("Lets update?", user_pets)
+      clear
+      new_pet = Wizard.update_pet(user_pet_selection)
+      clear
+      slytherin_banner
+      puts "Your pet has been updated to #{new_pet}!!!"
+      user_pet_selection = new_pet
+      sleep(1.5)
+      clear
+      slytherin_banner
+      back_menu
    elsif
       menu_selection == "Logout"
       clear
@@ -191,6 +209,24 @@ def main_menu_hufflepuff
       hufflepuff_banner
       Wizard.hufflepuff
       back_menu
+      elsif
+      menu_selection == "Change Pet"
+      clear
+      slytherin_banner
+      user_pets = Wizard.pets
+      puts user_pets
+      clear
+      user_pet_selection = prompt.select("Lets update?", user_pets)
+      clear
+      new_pet = Wizard.update_pet(user_pet_selection)
+      clear
+      slytherin_banner
+      puts "Your pet has been updated to #{new_pet}!!!"
+      user_pet_selection = new_pet
+      sleep(1.5)
+      clear
+      slytherin_banner
+      back_menu
    elsif
       menu_selection == "Logout"
       clear
@@ -214,56 +250,31 @@ def main_menu_gryffindor
       gryffindor_banner
       Wizard.gryffindor
       back_menu
+      elsif
+      menu_selection == "Change Pet"
+      clear
+      slytherin_banner
+      user_pets = Wizard.pets
+      puts user_pets
+      clear
+      user_pet_selection = prompt.select("Lets update?", user_pets)
+      clear
+      new_pet = Wizard.update_pet(user_pet_selection)
+      clear
+      slytherin_banner
+      puts "Your pet has been updated to #{new_pet}!!!"
+      user_pet_selection = new_pet
+      sleep(1.5)
+      clear
+      slytherin_banner
+      back_menu
    elsif
       menu_selection == "Logout"
       clear
       exit_banner
    end
-
 end
 end
-
-
-   
-
-# when 
-   
-# else
-   
-# end
-
-# "Logout"
-#          clear
-#          exit_banner
-         
-#       when "Logout"
-#          clear
-#          exit_banner
-#       end
-#    end
-# end
-   
-# loop do case 
-# when 
-   
-# when 
-   
-# else
-   
-# end
- 
-         
-
-      # menu_selection == "House Slogan"
-   #    clear
-   #    slytherin_banner
-   #    puts "\n"
-   #    puts "'Or perhaps in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends'"
-   #    puts "\n"
-   #    back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
-   #    back
-   #    main_menu_slytherin
-   # end
 
    # if 
    #    "Find all Wizards in your House"
