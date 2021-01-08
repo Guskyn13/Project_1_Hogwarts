@@ -11,13 +11,30 @@ class Wizard < ActiveRecord::Base
    end
 
 # Array of all wizards by school
-  def self.slytherin
+   def self.slytherin
       sly = self.where(school: 'Slytherin').pluck(:name)
       puts sly
       puts "\n"
-   end 
+   end
 
-
+   def self.ravenclaw
+      rvn = self.where(school: 'Ravenclaw').pluck(:name)
+      puts rvn
+      puts "\n"
+   end
+   
+   def self.hufflepuff
+      hpf = self.where(school: 'Hufflepuff').pluck(:name)
+      puts hpf
+      puts "\n"
+   end
+   
+   def self.gryffindor
+      gfd = self.where(school: 'Gryffindor').pluck(:name)
+      puts gfd
+      puts "\n"
+   end
+   
 # Create mew wizards
    def self.create_new
       banner

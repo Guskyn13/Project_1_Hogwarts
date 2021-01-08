@@ -1,10 +1,10 @@
 # Wizards
 
-Wizard.create({name: "Harry Potter", age: 13, pet: "owl", school: "Gryfindor"})
-Wizard.create({name: "Bruce Jenner", age: 19, pet: "mouse", school: "Gryfindor"})
-Wizard.create({name: "Mike Tyson", age: 22, pet: "horse", school: "Gryfindor"})
-Wizard.create({name: "Peyton Manning", age: 14, pet: "mini horse", school: "Gryfindor"})
-Wizard.create({name: "Oliver Twist", age: 17, pet: "monkey", school: "Gryfindor"})
+Wizard.create({name: "Harry Potter", age: 13, pet: "owl", school: "Gryffindor"})
+Wizard.create({name: "Bruce Jenner", age: 19, pet: "mouse", school: "Gryffindor"})
+Wizard.create({name: "Mike Tyson", age: 22, pet: "horse", school: "Gryffindor"})
+Wizard.create({name: "Peyton Manning", age: 14, pet: "mini horse", school: "Gryffindor"})
+Wizard.create({name: "Oliver Twist", age: 17, pet: "monkey", school: "Gryffindor"})
 
 Wizard.create({name: "Steve Irwin", age: 46, pet: "alligator", school: "Hufflepuff"})
 Wizard.create({name: "Bob Ross", age: 56, pet: "pigeon", school: "Hufflepuff"})
