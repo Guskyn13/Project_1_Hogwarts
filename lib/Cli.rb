@@ -1,5 +1,9 @@
 class Cli
 
+   def play_music
+      pid = fork{ exec 'afplay', "Harry_Potter_Theme_Song_Hedwigs_Theme (mp3cut.net) (2).mp3" }
+   end
+
    def welcome
       new_student
       Wizard.create_new
@@ -22,9 +26,9 @@ class Cli
 
    end
    
-      def play_music
-         pid = fork{ exec 'afplay', "Harry_Potter_Theme_Song_Hedwigs_Theme (mp3cut.net) (2).mp3" }
-      end
+      # def play_music
+      #    pid = fork{ exec 'afplay', "Harry_Potter_Theme_Song_Hedwigs_Theme (mp3cut.net) (2).mp3" }
+      #end
    
    
 end

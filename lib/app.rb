@@ -10,16 +10,6 @@ def clear
    system('clear')
 end
 
-
-
-# def lolcat
-#    system "echo Basic Lolcat | lolcat"
-#    system "figlet Lolcat and Figlet | lolcat -a -d 1"
-#    system " echo Lolcat can even animate the colors in displays! | lolcat -a -d 500"
-#    print lolcat
-# end
-
-
 def new_student
    clear
    banner
@@ -38,12 +28,9 @@ def new_student
       elsif
          clear
          exit_banner
-      
+      end
+   end
 end
-end
-end
-
-
 
 def sorting_hat_welcome
    banner_sorting_hat
@@ -74,7 +61,10 @@ def main_menu_slytherin
    clear
    slytherin_banner
    puts "\n"
-
+   puts "Hello #{@username}, lets have a great year!"
+   puts "\n"
+   menu_selection = prompt.select("What can we do for you, that you can't do with a spell?", 
+   [ "House Slogan", "Find all Wizards in your House", "Change Pet", "Save Changes", "Logout"], symbols: {marker: '>'}, active_color: :cyan)
    puts "Welcome to Slytherin!"
    if menu_selection == "House Slogan"
       clear
@@ -88,27 +78,42 @@ def main_menu_slytherin
       Wizard.slytherin
       back_menu
    elsif
+      menu_selection == "Change Pet"
+      clear
+      slytherin_banner
+      user_pets = Wizard.pets
+      puts user_pets
+      clear
+      user_pet_selection = prompt.select("Lets update?", user_pets)
+      clear
+      new_pet = Wizard.update_pet(user_pet_selection)
+      clear
+      slytherin_banner
+      puts "Your pet has been updated to #{new_pet}!!!"
+      user_pet_selection = new_pet
+      sleep(1.5)
+      clear
+      slytherin_banner
+      back_menu
+   elsif
       menu_selection == "Logout"
       clear
       exit_banner
 
-   puts "Hello #{@username}, lets have a great year!"
-   puts "\n"
-   menu_selection = prompt.select("What can we do for you, that you can't do with a spell?", 
-   [ "House Slogan", "Find all Wizards in your House", "Change Pet", "Save Changes", "Logout"], symbols: {marker: '>'}, active_color: :cyan)
+
    
-loop do
-   case menu_selection  
-   when "House Slogan"
-      clear
-      slytherin_banner
-      puts "\n"
-      puts "'Or perhaps in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends'"
-      puts "\n"
-      back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
-   if back
-      main_menu_slytherin 
-   end
+# loop do
+#    case menu_selection  
+#    when "House Slogan"
+#       clear
+#       slytherin_banner
+#       puts "\n"
+#       puts "'Or perhaps in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends'"
+#       puts "\n"
+#       back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+#    if back
+#       main_menu_slytherin 
+#    end
 
 #    when  "Find all Wizards in your House"
 #       clear
@@ -123,28 +128,28 @@ loop do
 # end
 #    binding.pry
 
-when "Change Pet"
-   clear
-   slytherin_banner
-   user_pets = Wizard.pets
-   puts user_pets
-   clear
-   user_pet_selection = prompt.select("Lets update?", user_pets)
-   clear
-   new_pet = Wizard.update_pet(user_pet_selection)
-   clear
-   slytherin_banner
-   puts "Your pet has been updated to #{new_pet}!!!"
-   user_pet_selection = new_pet
-   sleep(1.5)
-   clear
-   slytherin_banner
-   back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
-   if back
-      main_menu_slytherin
+# when "Change Pet"
+#    clear
+#    slytherin_banner
+#    user_pets = Wizard.pets
+#    puts user_pets
+#    clear
+#    user_pet_selection = prompt.select("Lets update?", user_pets)
+#    clear
+#    new_pet = Wizard.update_pet(user_pet_selection)
+#    clear
+#    slytherin_banner
+#    puts "Your pet has been updated to #{new_pet}!!!"
+#    user_pet_selection = new_pet
+#    sleep(1.5)
+#    clear
+#    slytherin_banner
+#    back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+#    if back
+#       main_menu_slytherin
 
- master   end
-end
+#  master   end
+# end
 
 def main_menu_ravenclaw
    clear
@@ -301,10 +306,10 @@ end
 def log_out
    banner
    exit
-
 end
+
       
 
 
 
-
+end
