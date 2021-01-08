@@ -5,5 +5,3 @@ cli = Cli.new
 
 # cli.play_music
 cli.welcome
-
-

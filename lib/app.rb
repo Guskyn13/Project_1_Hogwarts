@@ -131,9 +131,64 @@ def main_menu_slytherin
    elsif
       menu_selection == "Logout"
       clear
+      pid = fork {exec 'killall', "afplay"}
       exit_banner
+
    end
 end
+
+      
+
+
+   
+# loop do
+#    case menu_selection  
+#    when "House Slogan"
+#       clear
+#       slytherin_banner
+#       puts "\n"
+#       puts "'Or perhaps in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends'"
+#       puts "\n"
+#       back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+#    if back
+#       main_menu_slytherin 
+#    end
+
+#    when  "Find all Wizards in your House"
+#       clear
+#       slytherin_banner
+#       puts "\n"
+#       Wizards.slytherin
+#       puts "\n"
+#       back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+#    if back
+#       main_menu_slytherin
+#    end
+# end
+#    binding.pry
+
+# when "Change Pet"
+#    clear
+#    slytherin_banner
+#    user_pets = Wizard.pets
+#    puts user_pets
+#    clear
+#    user_pet_selection = prompt.select("Lets update?", user_pets)
+#    clear
+#    new_pet = Wizard.update_pet(user_pet_selection)
+#    clear
+#    slytherin_banner
+#    puts "Your pet has been updated to #{new_pet}!!!"
+#    user_pet_selection = new_pet
+#    sleep(1.5)
+#    clear
+#    slytherin_banner
+#    back = prompt.select("Back?", ["Yes"], symbols: {marker: '>'}, active_color: :cyan)
+#    if back
+#       main_menu_slytherin
+
+#  master   end
+# end
 
 def main_menu_ravenclaw
    clear
@@ -269,13 +324,16 @@ def main_menu_gryffindor
    elsif
       menu_selection == "Logout"
       clear
+      pid = fork{ exec 'killall', "afplay"}
       exit_banner
    end
 end
 
 def log_out
+  
    banner
    exit
+   
 end
 
 def save_changes
