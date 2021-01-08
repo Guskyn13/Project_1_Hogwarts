@@ -60,7 +60,7 @@ def main_menu_slytherin
    puts "Hello #{@username}, lets have a great year!"
    puts "\n"
    menu_selection = prompt.select("What can we do for you, that you can't do with a spell?", 
-   [ "House Slogan", "Find all Wizards in your House", "Change Pet", "Save Chagnes", "Logout"], symbols: {marker: '>'}, active_color: :cyan)
+   [ "House Slogan", "Find all Wizards in your House", "Change Pet", "Save Changes", "Logout"], symbols: {marker: '>'}, active_color: :cyan)
    
 loop do
    case menu_selection  
