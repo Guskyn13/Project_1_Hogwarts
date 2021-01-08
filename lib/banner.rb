@@ -1,6 +1,6 @@
 def banner
    box = TTY::Box.frame(width: 120, height: 15, border: :thick, align: :center, padding: 2) do
-      font.write("Hogwarts!").lolcat
+      font.write("Hogwarts!")
    end
    print box
    puts "\n"
@@ -38,9 +38,9 @@ def hufflepuff_banner
    puts "\n"
 end
 
-def gryfindor_banner
+def gryffindor_banner
    box = TTY::Box.frame(width: 120, height: 15, border: :thick, align: :center, padding: 3) do
-      font.write("Gryfindor") 
+      font.write("Gryffindor") 
    end
    print box
    "\n"
@@ -53,5 +53,30 @@ def exit_banner
    print box
    sleep(5)
    clear
-   log_out
+   print banner
+   exit
+end
+
+def slytherin_slogan
+   puts "\n"
+   puts "'Or perhaps in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends'"
+   puts "\n"
+end
+
+def hufflepuff_slogan
+   puts "\n"
+   puts "You might belong in Hufflepuff, where they are just and loyal, those patient Hufflepuffs are tru and unafraid of toil'"
+   puts "\n"
+end
+
+def ravenclaw_slogan
+   puts "\n"
+   puts "'Or yet wise old Ravenclaw, if you've a ready mind, where those of wit and learning, will always find their kind'"
+   puts "\n"
+end
+
+def gryffindor_slogan
+   puts "\n"
+   puts "'You might belong in Gryffindor, where dwell the brave at heart, their daring, nerve and chivalry set Gryffindors appart'"
+   puts "\n"
 end
