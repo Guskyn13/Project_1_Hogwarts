@@ -283,4 +283,5 @@ def save_changes
    puts "Abra-ca-dabra!"
    puts "Changes have been saved"
    puts "\n"
+   sleep(4)
 end
