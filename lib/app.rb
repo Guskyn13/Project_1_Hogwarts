@@ -98,7 +98,9 @@ def main_menu_slytherin
    elsif
       menu_selection == "Logout"
       clear
+      pid = fork {exec 'killall', "afplay"}
       exit_banner
+      
 
 
    
@@ -271,6 +273,7 @@ def main_menu_gryffindor
    elsif
       menu_selection == "Logout"
       clear
+      pid = fork{ exec 'killall', "afplay"}
       exit_banner
    end
 end
@@ -315,8 +318,10 @@ end
 # end
 
 def log_out
+  
    banner
    exit
+   
 end
 
       
